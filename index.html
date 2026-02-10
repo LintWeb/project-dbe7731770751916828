@@ -246,6 +246,56 @@
             display: block;
         }
 
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 103, 65, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
         /* Contact Section */
         .contact-grid {
             display: grid;
@@ -330,6 +380,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#classes">Classes</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="tel:+8801817733055" class="btn btn-primary"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> Call Now</a>
@@ -405,6 +456,33 @@
         </div>
     </section>
 
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Studio Gallery</h2>
+                <p style="color: var(--text-muted);">Take a glimpse into our vibrant yoga community and serene studio space.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/chat-upload-1770752387271-2.jpeg" alt="Partner Yoga at Huril Studio">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/chat-upload-1770752387272-3.jpeg" alt="Yoga Group Class sitting">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/chat-upload-1770752387278-4.jpeg" alt="Yoga Group Class stretching">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/chat-upload-1770752387270-1.jpeg" alt="Huril Studio Branding">
+                    <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -455,6 +533,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#classes">Classes</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
